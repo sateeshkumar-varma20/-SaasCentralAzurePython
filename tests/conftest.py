@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import allure
 import logging
 
+
 @pytest.fixture(scope='class')
 def setup_driver(request: webdriver):
     options = webdriver.ChromeOptions()
@@ -14,10 +15,13 @@ def setup_driver(request: webdriver):
     options.add_experimental_option('useAutomationExtension', False)
     # options.add_argument("--headless")
     options.add_argument('ignore-certificate-errors')
+    options.add_argument('--disable-blink-features=AutomationControlled')
+    options.add_argument("--remote-allow-origins")
+    options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     request.cls.driver = driver
-    yield driver
+    print("Executing Before Yield.....")
+    yield
+    print("Executing Yield.....")
     driver.close()
     driver.quit()
-
-    driver.find_element(By.ID,"user_security_key").send_keys()

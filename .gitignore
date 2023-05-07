@@ -48,3 +48,6 @@ libr/
 
 #Ignore the Test Output folder
 TestOutput/
+
+# Ignore test report
+TestReports/
