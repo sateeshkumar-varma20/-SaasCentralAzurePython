@@ -22,7 +22,7 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest --html-report=./TestReports/test_report.html
+    pytest -v --junitxml="TestReports\result.xml"
   displayName: 'Run pytest'
 
 - task: PublishTestResults@2
