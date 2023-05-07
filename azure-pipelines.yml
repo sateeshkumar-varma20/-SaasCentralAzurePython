@@ -29,7 +29,13 @@ steps:
   displayName: publish unit test results
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'TestReports/test_report.html'
+    testResultsFiles: './TestReports/result.xml'
     testRunTitle: 'Unit test results for $(Build.BuildNumber)'
     buildConfiguration: debug
     mergeTestResults: true
+
+- task: Genetec.publish-test-result-screenshot.pipeline-extension.PublishTestResultScreenshot@0
+  displayName: 'Publish test result screenshot'
+  inputs:
+    organization: sas-azure
+    screenshotFolder: Screenshots

@@ -51,3 +51,6 @@ TestOutput/
 
 # Ignore test report
 TestReports/
+
+# Ignore screenshot
+Screenshots/

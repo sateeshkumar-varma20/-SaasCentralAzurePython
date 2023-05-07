@@ -10,6 +10,8 @@ import logging
 
 @pytest.fixture(scope='class')
 def setup_driver(request: webdriver):
+    log = logging.getLogger()
+    log.setLevel(logging.INFO)
     options = webdriver.ChromeOptions()
     options.add_argument("window-size=1280x1024")
     options.add_experimental_option('useAutomationExtension', False)
@@ -20,6 +22,7 @@ def setup_driver(request: webdriver):
     options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     request.cls.driver = driver
+    log.info("Driver Initiated")
     print("Executing Before Yield.....")
     yield
     print("Executing Yield.....")
