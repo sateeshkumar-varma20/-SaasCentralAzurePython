@@ -22,15 +22,14 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest --alluredir="TestReports"
+    pytest --html-report=./TestReports/test_report.html
   displayName: 'Run pytest'
 
 - task: PublishTestResults@2
   displayName: publish unit test results
   inputs:
-    testResultsFormat: 'HTML'
-    testResultsFiles: 'index.html'
-    searchFolder: '$(Build.BuildNumber)/allure-report'
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'TestReports/test_report.html'
     testRunTitle: 'Unit test results for $(Build.BuildNumber)'
     buildConfiguration: debug
     mergeTestResults: true
