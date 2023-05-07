@@ -1,1 +1,0 @@
-[32mINFO    [0m root:login_test.py:23 Launch Application

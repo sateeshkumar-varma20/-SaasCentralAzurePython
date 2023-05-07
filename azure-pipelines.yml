@@ -28,9 +28,9 @@ steps:
 - task: PublishTestResults@2
   displayName: publish unit test results
   inputs:
-    testResultsFormat: 'VSTest'
-    testResultsFiles: 'file*.html'
-    searchFolder: 'allure-report/$(Build.BuildNumber)'
-    testRunTitle: Unit test results for $(Build.BuildNumber)
+    testResultsFormat: 'HTML'
+    testResultsFiles: 'index.html'
+    searchFolder: '$(Build.BuildNumber)/allure-report'
+    testRunTitle: 'Unit test results for $(Build.BuildNumber)'
     buildConfiguration: debug
     mergeTestResults: true
