@@ -22,7 +22,7 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest
+    pytest --alluredir="TestReports"
   displayName: 'Run pytest'
 
 - task: PublishTestResults@2
