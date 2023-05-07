@@ -1,0 +1,9 @@
+[32mINFO    [0m root:login_test.py:23 Launch Application
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:303 POST http://localhost:58746/session/b2bb01d1df2b5ac8e6592328d6a55693/url {"url": "https://subscription.packtpub.com/login"}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:456 http://localhost:58746 "POST /session/b2bb01d1df2b5ac8e6592328d6a55693/url HTTP/1.1" 200 14
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:319 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:346 Finished Request
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:303 POST http://localhost:58746/session/b2bb01d1df2b5ac8e6592328d6a55693/window/maximize {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:456 http://localhost:58746 "POST /session/b2bb01d1df2b5ac8e6592328d6a55693/window/maximize HTTP/1.1" 200 51
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:319 Remote response: status=200 | data={"value":{"height":866,"width":1454,"x":-7,"y":-7}} | headers=HTTPHeaderDict({'Content-Length': '51', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+[35mDEBUG   [0m selenium.webdriver.remote.remote_connection:remote_connection.py:346 Finished Request
