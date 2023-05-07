@@ -12,8 +12,8 @@ pool:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.7.9'
-  displayName: 'Use Python 3.7.9'
+    versionSpec: '3.7'
+  displayName: 'Use Python 3.7'
 
 - script: |
     python -m pip install --upgrade pip
@@ -24,3 +24,13 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'Run pytest'
+
+- task: PublishTestResults@2
+  displayName: publish unit test results
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: 'file*.html'
+    searchFolder: 'allure-report/$(Build.BuildNumber)'
+    testRunTitle: Unit test results for $(Build.BuildNumber)
+    buildConfiguration: debug
+    mergeTestResults: true
