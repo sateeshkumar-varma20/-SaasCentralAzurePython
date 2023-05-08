@@ -18,9 +18,9 @@ class TestSaasLoginPage:
         self.driver.get("https://dev-sascental.azurewebsites.net/userlogin")
         # allure.attach(self.driver.get_screenshot_as_png(),name="screenshot",attachment_type=AttachmentType.PNG)
         self.driver.maximize_window()
-        screenshot_file = "/Screenshots/screenshot{0}.png".format(str(random.randint(0, 100)))
+        screenshot_file = "./Screenshots/screenshot{0}.png".format(str(random.randint(0, 100)))
         print(screenshot_file)
-        self.driver.save_screenshot("./Screenshots/screenshot.png")
+        self.driver.save_screenshot(screenshot_file)
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.ID, "user_security_key"))
         )
@@ -39,5 +39,5 @@ class TestSaasLoginPage:
             EC.element_to_be_clickable((By.ID, "button-sign-out"))
         )
         self.driver.find_element(By.ID, "button-sign-out").click()
-
+        time.sleep(5)
 
