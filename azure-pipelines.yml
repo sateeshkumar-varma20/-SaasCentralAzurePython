@@ -31,6 +31,6 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: './TestReports/result.xml'
     testRunTitle: 'Unit test results for $(Build.BuildNumber)'
-    publishRunAttachments: '/Screenshots'
+    publishRunAttachments: true
     buildConfiguration: debug
     mergeTestResults: true
